@@ -1,1 +1,23 @@
 # Spider-webdev
+
+# Basic mode
+
+Schedule planner
+
+# Sub tasks
+
+1. Calendar
+
+2. Digital clock
+
+3. To-do list
+
+# Idea
+
+1.  Todo list of a particular date to be displayed on clicking that date on the calendar.
+    And also soon after clicking the add btn.
+2.  Digital clock showing current time using Date object.
+
+3.  Storing the todo list along with the date on which they are planned.
+    > text field to get the to-do
+    > div to show the to-dos

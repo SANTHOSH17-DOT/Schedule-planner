@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(112, 106, 106);
+  user-select: none;
+}
+header {
+  text-align: center;
+  color: cyan;
+  padding: 20px;
+  font-size: 2rem;
+  background-color: rgb(47, 48, 48);
+  text-shadow: 2px 2px 5px rgb(67, 157, 218);
+}
+.planner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.clockH {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  max-width: 700px;
+  position: relative;
+}
+
+th,
+td {
+  height: 80px;
+  width: 90px;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(51, 48, 48);
+  z-index: 2;
+  border-radius: 3px;
+  text-align: center;
+}
+td {
+  background-color: rgb(71, 68, 68);
+}
+td:hover {
+  background: rgb(85, 83, 83);
+  cursor: cell;
+}
+.MY {
+  padding: 20px;
+  color: cyan;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.clock {
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 1000px;
+  font-size: 2rem;
+  border-radius: 5px;
+  background: rgb(51, 48, 48);
+  text-shadow: 1px 1px 5px cyan;
+
+  outline: none;
+}
+.changeM {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#previous,
+#next {
+  cursor: pointer;
+  outline: none;
+  background: rgb(112, 106, 106);
+  color: cyan;
+  border: none;
+  font-size: 4rem;
+  margin: 5px;
+}
+#previous:hover,
+#next:hover {
+  color: rgb(60, 143, 143);
+}
+#previous:active,
+#next:active {
+  color: rgb(39, 82, 82);
+}
+#previous {
+  transform: rotateY(180deg);
+}
+.highDate {
+  background: rgb(114, 110, 110);
+  color: cyan;
+}
+#months,
+#years {
+  margin: 5px;
+  padding: 7px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgb(51, 48, 48);
+  color: cyan;
+  border: 2px solid cyan;
+  cursor: pointer;
+}
+#months:hover,
+#years:hover {
+  background-color: rgb(43, 39, 39);
+}
+.todoList {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.todo {
+  position: absolute;
+  top: 150px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 800px;
+  height: 650px;
+}
+.bgdiv {
+  display: block;
+  background: cyan;
+  height: 650px;
+  width: 800px;
+  opacity: 0.6;
+  position: absolute;
+  top: 150px;
+}
+.inputTodo {
+  position: absolute;
+  top: 40px;
+}
+#inTodo {
+  width: 300px;
+  height: 50px;
+  font-size: 24px;
+}
+#addTodo {
+  padding: 10px;
+  font-size: 20px;
+  background: black;
+  cursor: pointer;
+}
+#backbtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  width: 100px;
+  font-size: 20px;
+  text-align: left;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  clip-path: polygon(68% 0, 100% 49%, 69% 100%, 0 99%, 0 0);
+  cursor: pointer;
+}
+.TodoBody {
+  overflow: auto;
+  background: white;
+  color: black;
+  position: relative;
+  top: 60px;
+  height: 500px;
+  width: 500px;
+}
