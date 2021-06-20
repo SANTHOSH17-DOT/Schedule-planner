@@ -11,6 +11,8 @@ Schedule planner
 2. Digital clock
 
 3. To-do list
+   > Data has to be stored at the local storage
+   > Add and deleting todo.
 
 # Idea
 
