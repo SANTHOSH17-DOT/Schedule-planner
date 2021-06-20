@@ -37,7 +37,7 @@ var monthYear = document.querySelector('.MY');
 const monthList = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 // In case of feb(28days), there is a chance for the last row to be empty
 // so think about adding rows and cell
-
+var selectDate; //selected Date with global scope
 const createCal = (month,year) =>{
     // think for change of months.
     const tableBody = document.querySelector('#calendar-body');
@@ -81,174 +81,239 @@ const createCal = (month,year) =>{
     backBtn = document.querySelector('#backbtn');
     backBtn.addEventListener('click',function(){
         todoPage = document.querySelector('.todoList');
-            todoPage.style.display = 'none';
+        
+        const todoBody = document.querySelector('.TodoBody');
+        todoBody.innerHTML ='';
+        todoPage.style.animation = 'todoPageOff 500ms 1';
+        setTimeout(()=>{todoPage.style.display = 'none';},500);
+        document.querySelector('#inTodo').value = '';
+        document.querySelector('.planner').style.pointerEvents = 'all';
+                /*
+        tds = Array.from(document.querySelectorAll('td'));
+        tds.forEach((value)=>{
+        value.style.border = 'none';
+        });*/
     });
     //todo list of the current date should be displayed initially
 
     tds = Array.from(document.querySelectorAll('td'));
     
+    // check the scope of selectDate
+
+    //Calendar page to todoPage
     
+    var todoBody = document.querySelector('.TodoBody');
+    var delBtns;
     tds.map(td=>{
         
         if(td.textContent != ""){
         td.addEventListener('click',()=>{
-            const todoBody = document.querySelector('.TodoBody');
-                todoBody.innerHTML ='';
-        //displaying the data after clicking the date
-            let selectDate;
+            document.querySelector('.planner').style.pointerEvents = 'none';
+            //todo page entry
+            document.querySelector('.todoList').style.animation = 'todoPage 400ms 1';
+
+            tds.forEach((value)=>{
+                value.style.border = 'none';//check once
+            });
+            //highlighting the date clicked
+            td.style.border = '2px solid rgb(43, 39, 39)';
+            
+            //clearing the todo body everytime entering 
+            todoBody.innerHTML = "";
+                
+            
+            //displaying the data after clicking the date
+            
             tds = Array.from(document.querySelectorAll('td'));
+            
             tds.map(td=>{
-                if(td.style.border == 'cyan'){
+                
+                if(td.style.border == '2px solid rgb(43, 39, 39)'){
+                    
                     selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
+                    
                 }
             });
-            todoContent = localStorage.getItem(selectDate);
+            document.querySelector('#todoDate').innerHTML = selectDate;
+            
+            let todoContent = localStorage.getItem(selectDate);
+            
+            
             if(todoContent!=undefined){
-                C = todoContent.split(',');//logic error
+                let data = localStorage.getItem(selectDate);
+                let A = JSON.parse(data);
+                 
                 
-                n = C.length; //Try adding div without clearing the todo box everytime
-                const todoBody = document.querySelector('.TodoBody');
-                todoBody.innerHTML = "";
-                C.forEach((value)=>{
+                for(let i =0;i<A.length-1;i++){//check once again
+                    if(A[i]!=""){
+                        todoData =document.createElement('div');
                     
-                    todoData =document.createElement('div');
-                    
-                    todoData.innerHTML='<span>'+value+'</span>'+'<button id="delBtn">'+'🗑️'+'</button>';
+                    todoData.innerHTML='<span>'+A[i]+'</span>'+'<button id="delBtn">'+'<i class="far fa-trash-alt"></i>'+'</button>';
                     todoBody.appendChild(todoData);
-                });
+                }
             }
-            //Calendar page to todoPage
+            }
+                
+            
+            
             todoPage = document.querySelector('.todoList');
             todoPage.style.display = 'flex';
-            tds.forEach((value)=>{
-                value.style.background = 'rgb(71, 68, 68)';
-                curdate = document.querySelector('.highDate');
-                curdate.style.background = 'grey';
-                value.style.border = 'none';
-            });
             
-            
-            
-            
-            td.style.border = '2px solid cyan';
-            //try to display the data soon after clicking the add btn aswell.
-            
-            //addding todolist for the date chosen
+            // highlighting the date selected
+            td.style.border = '2px solid rgb(43, 39, 39)';
+            //adding todolist for the date chosen
             addTodoBtn = document.querySelector('#addTodo');
             addTodoBtn.addEventListener('click',()=>{
                 const todoBody = document.querySelector('.TodoBody');
-                todoBody.innerHTML ='';
-            let selectDate;
-            tds = Array.from(document.querySelectorAll('td'));
-            tds.map(td=>{
-                if(td.style.border == '2px solid cyan'){
-                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
-                }
-            });
-            //console.log(td); // gives the previously selected td(check)
-            let inputData = document.querySelector('#inTodo').value;
-            if(inputData){
-                //think of appending the data
-                // seems to be applying for every td, check it
                 
                 console.log(selectDate);
-                if(localStorage.getItem(selectDate)!=null){
-                    console.log(localStorage.getItem(selectDate));
-                    A = localStorage.getItem(selectDate);
-                    B = A.split(',');//this works on datas with , (prob)
-                    //get rid of the null value in the array
-                    //let index = B.indexOf('');
-                    //B.splice(index,1);
+            
+            let inputData = document.querySelector('#inTodo').value;
+            
+            if(inputData){
+                //think of appending the data
+                let todoData =document.createElement('div');
+                
+                todoData.innerHTML='<span>'+inputData+'</span>'+'<button id="delBtn">'+'<i class="far fa-trash-alt"></i>'+'</button>';
+                todoBody.insertBefore(todoData,todoBody.childNodes[0]);
 
-                    console.log(B);
-                    B.push(inputData);
-                    localStorage.setItem(selectDate,B);
+                //animation
+                todoData.style.position = 'relative';
+                todoData.style.animation = 'addInput 500ms 1';
+                
+                console.log(localStorage.getItem(selectDate));
+                if(localStorage.getItem(selectDate)!=null){
+                    let data = localStorage.getItem(selectDate);
+                    let A = JSON.parse(data);//stupid idea
+                    //think of json
+                    console.log(A);
+                    
+                    
+                 
+                    A.unshift(inputData);
+                    localStorage.setItem(selectDate,JSON.stringify(A));
+                    console.log(A);
                 }else{
                     let k =[];
                     k.push(document.querySelector('#inTodo').value);
-                    console.log(k);
-                localStorage.setItem(selectDate,k);
+                    console.log(JSON.stringify(k));
+                localStorage.setItem(selectDate,JSON.stringify(k));
                 }
-            }
-            document.querySelector('#inTodo').value = "";
             
-            console.log(selectDate);
-            console.log(localStorage.getItem(selectDate));
-            todoContent = localStorage.getItem(selectDate);
-            if(todoContent!=undefined){
-                C = todoContent.split(',');
-                n = C.length; //Try adding div without clearing the todo box everytime
-                todoBody.innerHTML = "";
-                C.forEach((value)=>{
-                    
-                    todoData =document.createElement('div');
-                    
-                    todoData.innerHTML='<span>'+value+'</span>'+'<button id="delBtn>'+'🗑️'+'</button>';
-                    todoBody.appendChild(todoData);
-                });
-
             }
+            document.querySelector('#inTodo').value = '';
+            
+            // Avoid repeating this part.
+            delBtns = Array.from(document.querySelectorAll('#delBtn'));
+        delBtns.map(btn=>{
+            console.log(btn);
+            btn.addEventListener('click',()=>{
+                
+                console.log('Del btn clicked');
+                let parentDiv = btn.parentElement;
+                
+                delTodo = parentDiv.children[0].textContent;
+                
+                    parentDiv.style.animation = 'delInput 500ms 1';
+                
+                //removing the div element from the todo list
+                setTimeout(()=>{parentDiv.remove();},500);
+                
+                
+            tds = Array.from(document.querySelectorAll('td'));
+            //How to get rid of td? try to give select Date global scope
+            tds.map(td=>{
+                if(td.style.border == '2px solid rgb(43, 39, 39)'){
+                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
+                }
+                });
+                let data = localStorage.getItem(selectDate);
+                let A = JSON.parse(data);
+
+                //removing the data from the local storage
+                
+                delIndex= A.indexOf(delTodo);
+                console.log(delIndex);
+                A.splice(delIndex,1);
+                localStorage.setItem(selectDate,JSON.stringify(A));
+
+                todoContent = localStorage.getItem(selectDate);
+                const todoBody = document.querySelector('.TodoBody');
+
+            
+                
+            });
+            
+        });
+        });
+        //avoid repeating this part
+        console.log(document.querySelectorAll('#delBtn'));
+            delBtns = Array.from(document.querySelectorAll('#delBtn'));
+            console.log(delBtns);
+        //remove button
+        // And also once add btn is clicked, delete btn is not working.
+        // Maybe the problem is because of the delBtns array.
+        
+        
+            delBtns = Array.from(document.querySelectorAll('#delBtn'));
+        delBtns.map(btn=>{
+            console.log(btn);
+            btn.addEventListener('click',()=>{
+                
+                console.log('Del btn clicked');
+                let parentDiv = btn.parentElement;
+                delTodo = parentDiv.children[0].textContent;
+                
+                parentDiv.style.animation = 'delInput 500ms 1';
+                
+                //removing the div element from the todo list
+                setTimeout(()=>{parentDiv.remove();},500);
+                
+                
+                
+            tds = Array.from(document.querySelectorAll('td'));
+            //How to get rid of td? try to give select Date global scope
+            tds.map(td=>{
+                if(td.style.border == '2px solid rgb(43, 39, 39)'){
+                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
+                }
+            });
+            let data = localStorage.getItem(selectDate);
+            let A = JSON.parse(data);
+
+            //removing the data from the local storage
+            
+            delIndex= A.indexOf(delTodo);
+            console.log(delIndex);
+            A.splice(delIndex,1);//check this(some logic error)
+            localStorage.setItem(selectDate,JSON.stringify(A));
+
+                todoContent = localStorage.getItem(selectDate);
+                const todoBody = document.querySelector('.TodoBody');
+
+            
+            
+            });
             
         });
         
         
+
+
     });
+     
 }
+
+
+
     });  
     
 }        
 
-        //remove button
-        //It works only once(prob). Think of something like enable delete option each time the todo list displays.
-        const delData = ()=>{
-           
-        let btns = Array.from(document.querySelectorAll('#delBtn'));
         
-        btns.map(btn=>{
-            console.log(btn);
-            btn.addEventListener('click',()=>{
-                console.log('Del btn clicked');
-                parentDiv = btn.parentElement;
-                delTodo = parentDiv.children[0].textContent;
-                
-                parentDiv.remove();
-                console.log(parentDiv);
-                
-                console.log(delTodo);
-                let selectDate;
-            tds = Array.from(document.querySelectorAll('td'));
-            tds.map(td=>{
-                if(td.style.border == '2px solid cyan'){
-                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
-                }
-            });
-                todoContent = localStorage.getItem(selectDate);
-                console.log(todoContent);
-                B = todoContent.split(',');
-                delIndex= B.indexOf(delTodo);
-                console.log(delIndex);
-                B.splice(delIndex,1);
-                localStorage.setItem(selectDate,B);
-
-                todoContent = localStorage.getItem(selectDate);
-                const todoBody = document.querySelector('.TodoBody');
-            if(todoContent!=undefined){
-                C = todoContent.split(',');
-                n = C.length; //Try adding div without clearing the todo box everytime
-                todoBody.innerHTML = "";
-                C.forEach((value)=>{
-                    
-                    todoData =document.createElement('div');
-                    
-                    todoData.innerHTML='<span>'+value+'</span>'+'<button id="delBtn>'+'🗑️'+'</button>';
-                    todoBody.appendChild(todoData);
-                });
-            }
-            });
-        });
+          
     
-    }
-    delData();
+    
 var curMonth = (new Date()).getMonth();
 var curYear = (new Date()).getFullYear();
 //calendar on current month

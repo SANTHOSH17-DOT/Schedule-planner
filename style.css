@@ -4,23 +4,22 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(112, 106, 106);
   user-select: none;
+  font-family: "Ubuntu", sans-serif;
 }
 header {
   text-align: center;
-  color: cyan;
-  padding: 20px;
-  font-size: 2rem;
-  background-color: rgb(47, 48, 48);
-  text-shadow: 2px 2px 5px rgb(67, 157, 218);
+  color: rgb(241, 229, 57);
+  text-shadow: 4px 4px 3px rgb(61, 136, 136);
+  font-size: 3rem;
+  margin: 20px;
 }
 .planner {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
+  pointer-events: all;
   height: 100vh;
 }
 
@@ -36,42 +35,47 @@ header {
   justify-content: space-around;
 
   max-width: 700px;
-  position: relative;
 }
 
 th,
 td {
-  height: 80px;
-  width: 90px;
+  height: 75px;
+  width: 85px;
   font-size: 1.5rem;
-  color: rgb(255, 255, 255);
-  background-color: rgb(51, 48, 48);
+  font-weight: 800;
+  color: rgb(39, 37, 13);
+
   z-index: 2;
   border-radius: 3px;
   text-align: center;
 }
+th {
+  background-color: rgb(68, 143, 228);
+  color: white;
+  text-shadow: 2px 2px rgb(25, 52, 83);
+}
 td {
-  background-color: rgb(71, 68, 68);
+  background-color: rgb(227, 233, 233);
 }
 td:hover {
-  background: rgb(85, 83, 83);
+  background: rgb(192, 223, 231);
   cursor: cell;
 }
 .MY {
   padding: 20px;
-  color: cyan;
+  color: rgb(241, 238, 45);
+  text-shadow: 2px 2px 3px rgb(68, 63, 63);
   font-size: 2rem;
   font-weight: 800;
 }
 .clock {
   padding: 10px;
-  color: rgb(255, 255, 255);
+  color: rgb(68, 143, 228);
   font-weight: 1000px;
   font-size: 2rem;
   border-radius: 5px;
-  background: rgb(51, 48, 48);
-  text-shadow: 1px 1px 5px cyan;
-
+  background: rgb(241, 238, 45);
+  box-shadow: 2px 2px 3px rgb(68, 63, 63);
   outline: none;
 }
 .changeM {
@@ -83,50 +87,59 @@ td:hover {
 #next {
   cursor: pointer;
   outline: none;
-  background: rgb(112, 106, 106);
-  color: cyan;
+  clip-path: polygon(100% 50%, 0 0, 0 99%);
+  height: 50px;
+  width: 50px;
+  background-color: rgb(241, 245, 18);
   border: none;
   font-size: 4rem;
   margin: 5px;
 }
 #previous:hover,
 #next:hover {
-  color: rgb(60, 143, 143);
+  background: rgb(184, 187, 25);
 }
 #previous:active,
 #next:active {
-  color: rgb(39, 82, 82);
+  background-color: rgb(84, 85, 11);
 }
 #previous {
   transform: rotateY(180deg);
 }
 .highDate {
-  background: rgb(114, 110, 110);
-  color: cyan;
+  background: rgb(141, 171, 236);
+  color: white;
 }
 #months,
 #years {
   margin: 5px;
   padding: 7px;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: bold;
-  background-color: rgb(51, 48, 48);
-  color: cyan;
-  border: 2px solid cyan;
+  background-color: rgb(68, 143, 228);
+  color: rgb(248, 237, 237);
+
+  box-shadow: 2px 2px 3px rgb(53, 51, 51);
   cursor: pointer;
+  outline: none;
+  font-weight: 600;
 }
 #months:hover,
 #years:hover {
-  background-color: rgb(43, 39, 39);
+  background-color: rgb(226, 240, 41);
+  color: rgb(19, 18, 18);
 }
 .todoList {
   display: none;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  top: -700px;
+  z-index: 2;
 }
 .todo {
   position: absolute;
-  top: 150px;
+  top: 0;
   display: flex;
 
   flex-direction: column;
@@ -137,48 +150,128 @@ td:hover {
 }
 .bgdiv {
   display: block;
-  background: cyan;
+  background: rgb(167, 210, 238);
   height: 650px;
   width: 800px;
-  opacity: 0.6;
+  opacity: 0.75;
   position: absolute;
-  top: 150px;
+  top: 0;
 }
-.inputTodo {
-  position: absolute;
-  top: 40px;
-}
+
 #inTodo {
   width: 300px;
   height: 50px;
   font-size: 24px;
+  background-color: rgb(243, 240, 240);
+  outline: none;
 }
 #addTodo {
   padding: 10px;
   font-size: 20px;
-  background: black;
+  background: rgb(23, 193, 236);
   cursor: pointer;
 }
+#addTodo:hover {
+  background: rgb(15, 128, 156);
+}
 #backbtn {
-  position: absolute;
-  top: 0;
-  right: 0;
   margin: 10px;
   width: 100px;
   font-size: 20px;
   text-align: left;
   padding: 5px 10px;
-  background: red;
+  background: rgb(14, 138, 240);
   color: white;
   clip-path: polygon(68% 0, 100% 49%, 69% 100%, 0 99%, 0 0);
   cursor: pointer;
+  text-shadow: 2px 2px 2px rgb(53, 51, 51);
+  box-shadow: -2px 2px 3px rgb(53, 51, 51);
+}
+#backbtn:hover {
+  background: rgb(19, 104, 173);
+}
+#backbtn:active {
+  background: rgb(7, 43, 73);
+}
+#todoDate {
+  background-color: rgb(246, 250, 8);
+  text-shadow: 2px 2px 2px rgb(53, 51, 51);
+  box-shadow: 2px 2px 3px rgb(53, 51, 51);
+  color: white;
+  padding: 5px 10px;
+  margin: 10px;
+
+  font-size: 28px;
+  font-weight: 800;
 }
 .TodoBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   overflow: auto;
-  background: white;
-  color: black;
-  position: relative;
-  top: 60px;
+  background: rgb(240, 241, 224);
   height: 500px;
   width: 500px;
+}
+.TodoBody > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 80%;
+  background: rgb(243, 240, 240);
+  box-shadow: 2px 2px 3px rgb(53, 51, 51);
+  color: rgb(14, 138, 240);
+  padding: 20px;
+  font-size: 20px;
+}
+.TodoBody > div > span {
+  overflow: auto;
+  margin: 10px;
+}
+#delBtn {
+  padding: 5px;
+  background: red;
+  cursor: pointer;
+  color: white;
+}
+#delBtn:hover {
+  background: rgb(240, 105, 105);
+}
+@keyframes todoPage {
+  from {
+    top: 0px;
+    opacity: 0;
+  }
+  to {
+    top: -700px;
+    opacity: 100%;
+  }
+}
+@keyframes todoPageOff {
+  0% {
+    top: -700px;
+    opacity: 100%;
+  }
+  100% {
+    top: -1400px;
+    opacity: 0;
+  }
+}
+@keyframes addInput {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes delInput {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
