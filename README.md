@@ -28,3 +28,4 @@ Schedule planner
 6. Storing the todo list along with the date on which they are planned.
    > text field to get the to-do
    > div to show the to-dos
+7. vanta.js for background effects.
