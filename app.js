@@ -144,7 +144,7 @@ const createCal = (month,year) =>{
                 let A = JSON.parse(data);
                  
                 
-                for(let i =0;i<A.length-1;i++){//check once again
+                for(let i =0;i<A.length;i++){//check once again
                     if(A[i]!=""){
                         todoData =document.createElement('div');
                     
@@ -197,7 +197,7 @@ const createCal = (month,year) =>{
                     let k =[];
                     k.push(document.querySelector('#inTodo').value);
                     console.log(JSON.stringify(k));
-                localStorage.setItem(selectDate,JSON.stringify(k));
+                    localStorage.setItem(selectDate,JSON.stringify(k));
                 }
             
             }
