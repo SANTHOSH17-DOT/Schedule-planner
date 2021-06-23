@@ -1,6 +1,6 @@
 # Spider-webdev
 
-# Basic mode
+# hacker mode
 
 Schedule planner
 
@@ -8,11 +8,22 @@ Schedule planner
 
 1. Calendar
 
-2. Digital clock
+2. Digital clock and analog clock(switch)
+
+   > control over clock timing
+   > dimensions of clock's hand etc (on user input)
 
 3. To-do list
+
    > Data has to be stored at the local storage
    > Add and deleting todo.
+   > Deadline time.
+   > todo tracker(check whether completed or pending)
+   > Seperate pending list for today's todo
+
+4. Multiple user functionality
+5. Sound effects
+6. Color
 
 # Idea
 

@@ -13,13 +13,49 @@
 <body>
     
     
+    
+    
     <section class="planner">
-        <header><h1>Schedule Planner</h1></header>
+        <div class='holder'>
+            <header><h1>Schedule Planner</h1></header>
+            <div class="clock"></div>
+            <canvas width='400px' height = '400px' id='canvas1'></canvas>
+            <canvas width='400px' height = '400px' id='canvas2'></canvas>
+            <div id="custH">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <div id="clockF">
+                <label for='hour'>Hour hand</label>
+                <input type='color' value='#FF0505'id='hour'>
+                
+                <label for='min'>Minute hand</label>
+                <input type='color' value='#39FB04'id='min'>
+                
+                <label for='sec'>Second hand</label>
+                <input type='color' value='#0703FC'id='sec'>
+                
+                <label for='clockBG'>clock bg</label>
+                <input type='color' value='#FFFFFF'id='clockBG'>
+                <label for='clockNum'>clock Number</label>
+                <input type='color' value='#000000'id='clockNum'>
+            </div>
+                
+            <div class='swap'>
+                <div class='swap-aclock'>
+                    <i class="far fa-clock"></i>
+                </div>
+                <div class='swap-dclock'>
+                    <img src="https://emoji.gg/assets/emoji/2692_digital_alarm_clock.png" width="64px" height="64px" alt="digital_alarm_clock">
+                </div>
+            </div>
+            
+        </div>
+        
     <div><button id="previous" onclick='prevMonth()'></button></div>
     <div class="calendar">
             <div class="clockH">
             <div class='MY'></div>
-            <div class="clock"></div>
+            
             </div>
         
         <table>
@@ -84,6 +120,7 @@
         </div>
     </div>
     <div><button id="next" onclick='nextMonth()'></button></div>
+    <div id ='log-out'><i class="fas fa-sign-out-alt"></i></div>
 </section>
 <section class="todoList">
     <div class="bgdiv"></div>
@@ -101,7 +138,15 @@
         </div>
     </div>
 </section>
+<div class='userPage'>
+    <p>
+        <label for='userID'>Enter your name:</label><br/>
+        <input id='userID' type='text'>
+    </p>
+    <button id='toSchedule'>Let's go</button>
+</div>
 <script src="app.js"></script>
+<script src='appAC.js'></script>
 <script src="https://kit.fontawesome.com/f4289c64ac.js" crossorigin="anonymous"></script>
 <script src="three.r119.min.js"></script>
 <script src="vanta.waves.min.js"></script>

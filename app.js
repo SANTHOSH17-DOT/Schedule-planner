@@ -144,7 +144,7 @@ const createCal = (month,year) =>{
                 let A = JSON.parse(data);
                  
                 
-                for(let i =0;i<A.length-1;i++){//check once again
+                for(let i =0;i<A.length;i++){//check once again
                     if(A[i]!=""){
                         todoData =document.createElement('div');
                     
