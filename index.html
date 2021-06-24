@@ -12,15 +12,13 @@
 
 <body>
     
-    
-    
-    
     <section class="planner">
+        <div id="userProf"></div>
         <div class='holder'>
             <header><h1>Schedule Planner</h1></header>
             <div class="clock"></div>
-            <canvas width='400px' height = '400px' id='canvas1'></canvas>
-            <canvas width='400px' height = '400px' id='canvas2'></canvas>
+            <canvas width='350px' height = '350px' id='canvas1'></canvas>
+            <canvas width='350px' height = '350px' id='canvas2'></canvas>
             <div id="custH">
                 <i class="fas fa-cogs"></i>
             </div>
@@ -48,7 +46,53 @@
                     <img src="https://emoji.gg/assets/emoji/2692_digital_alarm_clock.png" width="64px" height="64px" alt="digital_alarm_clock">
                 </div>
             </div>
-            
+            <div>
+                <button id="reset">Reset</button>
+                
+            </div>
+            <div class="resetPage">
+                <div class='boss1'>
+                    <div class="hourchange">
+                        <div>Hour</div>
+                        
+                        <div class='arrow arrowH'>
+                            <h2 id='hourC'>00</h2>
+                            <div>
+                                <button><i class="fas fa-sort-up"></i></button>
+                            <button><i class="fas fa-sort-down"></i></button>
+                        
+                            </div>
+                            </div>
+                    </div>
+                    <div class="minchange">
+                        <div>Min</div>
+                        
+                        <div class='arrow arrowM'>
+                            <h2 id='minC'>00</h2>
+                            <div>
+                                <button><i class="fas fa-sort-up"></i></button>
+                            <button><i class="fas fa-sort-down"></i></button>
+                        
+                            </div></div>
+                    </div>
+                    <div class="secchange">
+                        <div>Sec</div>
+                        
+                        <div class='arrow arrowS'>
+                            <h2 id='secC'>00</h2>
+                            <div>
+                                <button><i class="fas fa-sort-up"></i></button>
+                            <button><i class="fas fa-sort-down"></i></button>
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='boss2'>
+                    <button id='done'>Done</button>
+                    <button id='auto'>Auto</button>
+                </div>
+            </div>
         </div>
         
     <div><button id="previous" onclick='prevMonth()'></button></div>
@@ -121,6 +165,7 @@
     </div>
     <div><button id="next" onclick='nextMonth()'></button></div>
     <div id ='log-out'><i class="fas fa-sign-out-alt"></i></div>
+    
 </section>
 <section class="todoList">
     <div class="bgdiv"></div>

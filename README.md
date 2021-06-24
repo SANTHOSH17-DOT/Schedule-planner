@@ -42,3 +42,7 @@ Schedule planner
    > text field to get the to-do
    > div to show the to-dos
 7. vanta.js for background effects.
+
+#pending
+
+1. todo with deadline time.

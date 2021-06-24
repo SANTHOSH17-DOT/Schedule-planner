@@ -1,28 +1,3 @@
-//Digital clock
-var clock = document.querySelector('.clock');
-interval = setInterval(()=>{
-  let d = new Date();
-  let hour =d.getHours();
-  let min =d.getMinutes();
-  let sec = d.getSeconds();
-  function less10(x){
-    if(x<10){
-      x = '0'+x;
-    }
-    return x;
-  }
-   
-  
-  if(hour>12){
-    hour = hour-12;
-    clock.innerHTML='<b>'+less10(hour)+':'+less10(min)+':'+less10(sec)+' PM'+'</b>';
-  }else if(hour===12){
-    clock.innerHTML='<b>'+less10(hour)+':'+less10(min)+':'+less10(sec)+' PM'+'</b>';
-    }else if(hour<12){
-    clock.innerHTML='<b>'+less10(hour)+':'+less10(min)+':'+less10(sec)+' AM'+'</b>';
-  }
- 
-},1000);
 
 //calendar
 
@@ -129,12 +104,13 @@ const createCal = (month,year) =>{
             tds.map(td=>{
                 
                 if(td.style.border == '2px solid rgb(43, 39, 39)'){
-                    
-                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
-                    
+                    const userProf = document.querySelector('#userProf');
+                    userProf.childNodes[0].innerHTML
+                    selectDate = userProf.childNodes[0].innerHTML+' '+td.innerHTML +' '+document.querySelector('.MY').textContent;
+                    todoDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
                 }
             });
-            document.querySelector('#todoDate').innerHTML = selectDate;
+            document.querySelector('#todoDate').innerHTML = todoDate;
             
             let todoContent = localStorage.getItem(selectDate);
             
@@ -224,7 +200,10 @@ const createCal = (month,year) =>{
             //How to get rid of td? try to give select Date global scope
             tds.map(td=>{
                 if(td.style.border == '2px solid rgb(43, 39, 39)'){
-                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
+                    const userProf = document.querySelector('#userProf');
+                    userProf.childNodes[0].innerHTML
+                    selectDate = userProf.childNodes[0].innerHTML+' '+td.innerHTML +' '+document.querySelector('.MY').textContent;
+                    
                 }
                 });
                 let data = localStorage.getItem(selectDate);
@@ -275,8 +254,10 @@ const createCal = (month,year) =>{
             //How to get rid of td? try to give select Date global scope
             tds.map(td=>{
                 if(td.style.border == '2px solid rgb(43, 39, 39)'){
-                    selectDate = td.innerHTML +' '+document.querySelector('.MY').textContent;
-                }
+                    const userProf = document.querySelector('#userProf');
+                    userProf.childNodes[0].innerHTML
+                    selectDate = userProf.childNodes[0].innerHTML+' '+td.innerHTML +' '+document.querySelector('.MY').textContent;
+                    }
             });
             let data = localStorage.getItem(selectDate);
             let A = JSON.parse(data);
@@ -346,4 +327,5 @@ const dropChange = ()=>{
     console.log(typeof(year));
     createCal(parseInt(month),parseInt(year));
 }
+
 

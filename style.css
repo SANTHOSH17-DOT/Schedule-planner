@@ -7,7 +7,6 @@ body {
   user-select: none;
   font-family: "Ubuntu", sans-serif;
 }
-
 .userPage {
   position: absolute;
   top: 250px;
@@ -30,6 +29,13 @@ body {
 #userID {
   width: 100%;
 }
+#userProf {
+  color: white;
+  position: relative;
+  top: -300px;
+  left: 100px;
+  font-size: 30px;
+}
 #toSchedule {
   padding: 10px 20px;
   font-weight: 400;
@@ -42,11 +48,34 @@ body {
   padding: 10px 20px;
   background-color: rgb(28, 69, 145);
 }
+#log-out {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+.fa-sign-out-alt {
+  color: rgb(236, 12, 12);
+  font-size: 40px;
+  cursor: pointer;
+}
+.fa-sign-out-alt:hover {
+  color: rgb(156, 9, 9);
+}
+.fa-sign-out-alt:active {
+  color: rgb(94, 7, 7);
+}
 header {
   text-align: center;
   color: rgb(241, 229, 57);
   text-shadow: 4px 4px 3px rgb(61, 136, 136);
   font-size: 3rem;
+  margin: 20px;
+}
+.holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .planner {
   display: flex;
@@ -61,7 +90,7 @@ header {
 .clockH {
   display: flex;
   flex-direction: row;
-
+  justify-content: space-between;
   align-items: center;
 }
 .calendar {
@@ -70,7 +99,6 @@ header {
   justify-content: space-around;
 
   max-width: 700px;
-  pointer-events: none;
 }
 
 th,
@@ -104,12 +132,15 @@ td:hover {
   font-size: 2rem;
   font-weight: 800;
 }
-
-.holder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.clock {
+  padding: 10px;
+  color: rgb(68, 143, 228);
+  font-weight: 1000px;
+  font-size: 2rem;
+  border-radius: 5px;
+  background: rgb(241, 238, 45);
+  box-shadow: 2px 2px 3px rgb(68, 63, 63);
+  outline: none;
 }
 .swap {
   display: flex;
@@ -120,7 +151,91 @@ td:hover {
   margin: 20px;
   pointer-events: none;
 }
+#reset {
+  padding: 10px 20px;
+  background-color: rgb(21, 243, 21);
+  border: 2px solid rgb(23, 143, 223);
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  top: 450px;
+  right: 70px;
+  cursor: pointer;
+}
 
+#reset:hover {
+  background-color: rgb(14, 153, 14);
+}
+#reset:active {
+  background-color: rgb(7, 71, 7);
+}
+.resetPage {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 120px;
+  left: -130px;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgb(52, 151, 231);
+  box-shadow: 2px 2px 3px rgb(96, 155, 233);
+}
+.boss1 {
+  display: flex;
+  flex-direction: row;
+}
+.boss2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.boss1 > div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.arrow > div {
+  display: flex;
+  flex-direction: row;
+}
+.arrow > div > button {
+  padding: 4px;
+  margin: 2px;
+  background-color: rgb(64, 215, 235);
+}
+
+#done {
+  margin: 5px;
+  background-color: yellow;
+  color: rgb(20, 20, 20);
+  padding: 5px 10px;
+  font-weight: 600;
+  border: 2px solid rgb(145, 145, 28);
+  box-shadow: 2px 2px 4px rgb(207, 201, 201);
+}
+
+#done:hover {
+  background-color: rgb(167, 167, 29);
+}
+#auto {
+  margin: 5px;
+  background-color: rgb(255, 0, 191);
+  color: rgb(252, 246, 246);
+  padding: 5px 10px;
+  font-weight: 600;
+  border: 2px solid rgb(145, 145, 28);
+  box-shadow: 2px 2px 4px rgb(207, 201, 201);
+}
+#auto:hover {
+  background-color: rgb(167, 29, 160);
+}
 .swap-aclock {
   margin: 5px;
   font-size: 50px;
@@ -156,7 +271,6 @@ td:hover {
   outline: none;
   margin-top: 20px;
 }
-
 #clockF {
   display: none;
   flex-direction: column;
@@ -164,7 +278,7 @@ td:hover {
   background: rgba(255, 255, 255, 0.568);
   position: absolute;
   top: 350px;
-  left: 80px;
+  left: -30px;
   padding: 20px;
   line-height: 25px;
   font-weight: 800;
@@ -188,6 +302,7 @@ td:hover {
 #canvas1,
 #canvas2 {
   display: none;
+  margin-top: -30px;
 }
 .changeM {
   display: flex;
