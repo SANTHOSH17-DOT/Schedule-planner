@@ -1,503 +1,613 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-  user-select: none;
-  font-family: "Ubuntu", sans-serif;
+    user-select: none;
+    font-family: "Ubuntu", sans-serif;
 }
+
 .userPage {
-  position: absolute;
-  top: 250px;
-  left: 40vw;
-  font-size: 18px;
-  text-align: center;
-  background: rgb(251, 255, 0);
-  padding: 20px 40px;
-  border: 2px solid rgb(99, 141, 231);
-  box-shadow: 2px 2px 3px rgb(112, 165, 235);
-  color: rgb(37, 17, 216);
-  font-weight: 800;
+    position: absolute;
+    top: 250px;
+    left: 40vw;
+    font-size: 18px;
+    text-align: center;
+    background: rgb(251, 255, 0);
+    padding: 20px 40px;
+    border: 2px solid rgb(99, 141, 231);
+    box-shadow: 2px 2px 3px rgb(112, 165, 235);
+    color: rgb(37, 17, 216);
+    font-weight: 800;
 }
-.userPage > p {
-  position: relative;
-  text-align: left;
-  margin-bottom: 20px;
-  margin-top: 10px;
+
+.userPage>p {
+    position: relative;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
+
 #userID {
-  width: 100%;
+    width: 100%;
 }
+
 #userProf {
-  color: white;
-  position: relative;
-  top: -300px;
-  left: 100px;
-  font-size: 30px;
+    color: white;
+    position: relative;
+    top: -300px;
+    left: 100px;
+    font-size: 30px;
 }
+
 #toSchedule {
-  padding: 10px 20px;
-  font-weight: 400;
-  color: white;
-  background-color: rgb(44, 86, 141);
-  cursor: pointer;
-  box-shadow: 2px 2px 3px rgb(110, 98, 28);
+    padding: 10px 20px;
+    font-weight: 400;
+    color: white;
+    background-color: rgb(44, 86, 141);
+    cursor: pointer;
+    box-shadow: 2px 2px 3px rgb(110, 98, 28);
 }
+
 #toSchedule:hover {
-  padding: 10px 20px;
-  background-color: rgb(28, 69, 145);
+    padding: 10px 20px;
+    background-color: rgb(28, 69, 145);
 }
+
 #log-out {
-  position: absolute;
-  top: 50px;
-  right: 50px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
 }
+
 .fa-sign-out-alt {
-  color: rgb(236, 12, 12);
-  font-size: 40px;
-  cursor: pointer;
+    color: rgb(236, 12, 12);
+    font-size: 40px;
+    cursor: pointer;
 }
+
 .fa-sign-out-alt:hover {
-  color: rgb(156, 9, 9);
+    color: rgb(156, 9, 9);
 }
+
 .fa-sign-out-alt:active {
-  color: rgb(94, 7, 7);
+    color: rgb(94, 7, 7);
 }
+
 header {
-  text-align: center;
-  color: rgb(241, 229, 57);
-  text-shadow: 4px 4px 3px rgb(61, 136, 136);
-  font-size: 3rem;
-  margin: 20px;
+    text-align: center;
+    color: rgb(241, 229, 57);
+    text-shadow: 4px 4px 3px rgb(61, 136, 136);
+    font-size: 3rem;
+    margin: 20px;
 }
+
 .holder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .planner {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  pointer-events: all;
-  height: 100vh;
-  opacity: 0.2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    height: 100vh;
+    opacity: 0.2;
 }
 
 .clockH {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-.calendar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 
-  max-width: 700px;
+.calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 700px;
 }
 
 th,
 td {
-  height: 75px;
-  width: 85px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: rgb(39, 37, 13);
+    height: 75px;
+    width: 85px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(39, 37, 13);
+    z-index: 2;
+    border-radius: 3px;
+    text-align: center;
+}
 
-  z-index: 2;
-  border-radius: 3px;
-  text-align: center;
-}
 th {
-  background-color: rgb(68, 143, 228);
-  color: white;
-  text-shadow: 2px 2px rgb(25, 52, 83);
+    background-color: rgb(68, 143, 228);
+    color: white;
+    text-shadow: 2px 2px rgb(25, 52, 83);
 }
+
 td {
-  background-color: rgb(227, 233, 233);
+    background-color: rgb(227, 233, 233);
 }
+
 td:hover {
-  background: rgb(192, 223, 231);
-  cursor: cell;
+    background: rgb(192, 223, 231);
+    cursor: cell;
 }
+
 .MY {
-  padding: 20px;
-  color: rgb(241, 238, 45);
-  text-shadow: 2px 2px 3px rgb(68, 63, 63);
-  font-size: 2rem;
-  font-weight: 800;
+    padding: 20px;
+    color: rgb(241, 238, 45);
+    text-shadow: 2px 2px 3px rgb(68, 63, 63);
+    font-size: 2rem;
+    font-weight: 800;
 }
+
 .clock {
-  padding: 10px;
-  color: rgb(68, 143, 228);
-  font-weight: 1000px;
-  font-size: 2rem;
-  border-radius: 5px;
-  background: rgb(241, 238, 45);
-  box-shadow: 2px 2px 3px rgb(68, 63, 63);
-  outline: none;
+    padding: 10px;
+    color: rgb(68, 143, 228);
+    font-weight: 1000px;
+    font-size: 2rem;
+    border-radius: 5px;
+    background: rgb(241, 238, 45);
+    box-shadow: 2px 2px 3px rgb(68, 63, 63);
+    outline: none;
 }
+
 .swap {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background: rgba(223, 238, 14, 0.541);
-  margin: 20px;
-  pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgba(223, 238, 14, 0.541);
+    margin: 20px;
+    pointer-events: none;
 }
+
 #reset {
-  padding: 10px 20px;
-  background-color: rgb(21, 243, 21);
-  border: 2px solid rgb(23, 143, 223);
-  font-weight: 600;
-  font-size: 24px;
-  color: white;
-  position: absolute;
-  top: 450px;
-  right: 70px;
-  cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgb(21, 243, 21);
+    border: 2px solid rgb(23, 143, 223);
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 450px;
+    right: 70px;
+    cursor: pointer;
 }
 
 #reset:hover {
-  background-color: rgb(14, 153, 14);
-}
-#reset:active {
-  background-color: rgb(7, 71, 7);
-}
-.resetPage {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 120px;
-  left: -130px;
-  z-index: 5;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid rgb(52, 151, 231);
-  box-shadow: 2px 2px 3px rgb(96, 155, 233);
-}
-.boss1 {
-  display: flex;
-  flex-direction: row;
-}
-.boss2 {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.boss1 > div {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    background-color: rgb(14, 153, 14);
 }
 
-.arrow > div {
-  display: flex;
-  flex-direction: row;
+#reset:active {
+    background-color: rgb(7, 71, 7);
 }
-.arrow > div > button {
-  padding: 4px;
-  margin: 2px;
-  background-color: rgb(64, 215, 235);
+
+.resetPage {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    left: -130px;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(52, 151, 231);
+    box-shadow: 2px 2px 3px rgb(96, 155, 233);
+}
+
+.boss1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.boss2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boss1>div {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.arrow>div {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow>div>button {
+    padding: 4px;
+    margin: 2px;
+    background-color: rgb(64, 215, 235);
 }
 
 #done {
-  margin: 5px;
-  background-color: yellow;
-  color: rgb(20, 20, 20);
-  padding: 5px 10px;
-  font-weight: 600;
-  border: 2px solid rgb(145, 145, 28);
-  box-shadow: 2px 2px 4px rgb(207, 201, 201);
+    margin: 5px;
+    background-color: yellow;
+    color: rgb(20, 20, 20);
+    padding: 5px 10px;
+    font-weight: 600;
+    border: 2px solid rgb(145, 145, 28);
+    box-shadow: 2px 2px 4px rgb(207, 201, 201);
 }
 
 #done:hover {
-  background-color: rgb(167, 167, 29);
+    background-color: rgb(167, 167, 29);
 }
+
 #auto {
-  margin: 5px;
-  background-color: rgb(255, 0, 191);
-  color: rgb(252, 246, 246);
-  padding: 5px 10px;
-  font-weight: 600;
-  border: 2px solid rgb(145, 145, 28);
-  box-shadow: 2px 2px 4px rgb(207, 201, 201);
+    margin: 5px;
+    background-color: rgb(255, 0, 191);
+    color: rgb(252, 246, 246);
+    padding: 5px 10px;
+    font-weight: 600;
+    border: 2px solid rgb(145, 145, 28);
+    box-shadow: 2px 2px 4px rgb(207, 201, 201);
 }
+
 #auto:hover {
-  background-color: rgb(167, 29, 160);
+    background-color: rgb(167, 29, 160);
 }
+
 .swap-aclock {
-  margin: 5px;
-  font-size: 50px;
-  background: rgb(14, 138, 240);
-  color: white;
-  padding: 5px;
-  opacity: 0.4;
-  cursor: pointer;
+    margin: 5px;
+    font-size: 50px;
+    background: rgb(14, 138, 240);
+    color: white;
+    padding: 5px;
+    opacity: 0.4;
+    cursor: pointer;
 }
+
 .swap-aclock:hover {
-  background: rgb(10, 83, 143);
+    background: rgb(10, 83, 143);
 }
+
 .swap-dclock {
-  background: rgb(14, 138, 240);
-  margin: 5px;
-  cursor: pointer;
+    background: rgb(14, 138, 240);
+    margin: 5px;
+    cursor: pointer;
 }
+
 .swap-dclock:hover {
-  background: rgb(10, 83, 143);
+    background: rgb(10, 83, 143);
 }
+
 .clock {
-  text-align: center;
-  padding: 40px;
-  color: rgb(68, 143, 228);
-  width: 400px;
-  font-weight: 1000;
-  font-size: 50px;
-  text-shadow: 2px 2px 3px rgb(9, 53, 104), 2px 2px 3px rgb(104, 104, 9);
-  border-radius: 5px;
-  border: 5px solid rgb(68, 143, 228);
-  background: rgb(241, 238, 45);
-  box-shadow: 2px 2px 3px 2px rgb(68, 63, 63);
-  outline: none;
-  margin-top: 20px;
+    text-align: center;
+    padding: 40px;
+    color: rgb(68, 143, 228);
+    width: 400px;
+    font-weight: 1000;
+    font-size: 50px;
+    text-shadow: 2px 2px 3px rgb(9, 53, 104), 2px 2px 3px rgb(104, 104, 9);
+    border-radius: 5px;
+    border: 5px solid rgb(68, 143, 228);
+    background: rgb(241, 238, 45);
+    box-shadow: 2px 2px 3px 2px rgb(68, 63, 63);
+    outline: none;
+    margin-top: 20px;
 }
+
 #clockF {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  background: rgba(255, 255, 255, 0.568);
-  position: absolute;
-  top: 350px;
-  left: -30px;
-  padding: 20px;
-  line-height: 25px;
-  font-weight: 800;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.568);
+    position: absolute;
+    top: 350px;
+    left: -30px;
+    padding: 20px;
+    line-height: 25px;
+    font-weight: 800;
 }
+
 #custH {
-  display: none;
+    display: none;
 }
 
 .fa-cogs {
-  color: white;
-  position: relative;
-  right: 150px;
-  font-size: 30px;
-  background: rgb(80, 161, 236);
-  padding: 5px;
-  cursor: pointer;
+    color: white;
+    position: relative;
+    right: 150px;
+    font-size: 30px;
+    background: rgb(80, 161, 236);
+    padding: 5px;
+    cursor: pointer;
 }
+
 .fa-cogs:hover {
-  background: rgb(36, 74, 109);
+    background: rgb(36, 74, 109);
 }
+
 #canvas1,
 #canvas2 {
-  display: none;
-  margin-top: -30px;
+    display: none;
+    margin-top: -30px;
 }
+
 .changeM {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 #previous,
 #next {
-  cursor: pointer;
-  outline: none;
-  clip-path: polygon(100% 50%, 0 0, 0 99%);
-  height: 50px;
-  width: 50px;
-  background-color: rgb(241, 245, 18);
-  border: none;
-  font-size: 4rem;
-  margin: 5px;
+    cursor: pointer;
+    outline: none;
+    clip-path: polygon(100% 50%, 0 0, 0 99%);
+    height: 50px;
+    width: 50px;
+    background-color: rgb(241, 245, 18);
+    border: none;
+    font-size: 4rem;
+    margin: 5px;
 }
+
 #previous:hover,
 #next:hover {
-  background: rgb(184, 187, 25);
+    background: rgb(184, 187, 25);
 }
+
 #previous:active,
 #next:active {
-  background-color: rgb(84, 85, 11);
+    background-color: rgb(84, 85, 11);
 }
+
 #previous {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
+
 .highDate {
-  background: rgb(141, 171, 236);
-  color: white;
+    background: rgb(141, 171, 236);
+    color: white;
 }
+
 #months,
 #years {
-  margin: 5px;
-  padding: 7px;
-  font-size: 27px;
-  font-weight: bold;
-  background-color: rgb(68, 143, 228);
-  color: rgb(248, 237, 237);
-
-  box-shadow: 2px 2px 3px rgb(53, 51, 51);
-  cursor: pointer;
-  outline: none;
-  font-weight: 600;
+    margin: 5px;
+    padding: 7px;
+    font-size: 27px;
+    font-weight: bold;
+    background-color: rgb(68, 143, 228);
+    color: rgb(248, 237, 237);
+    box-shadow: 2px 2px 3px rgb(53, 51, 51);
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
 }
+
 #months:hover,
 #years:hover {
-  background-color: rgb(226, 240, 41);
-  color: rgb(19, 18, 18);
+    background-color: rgb(226, 240, 41);
+    color: rgb(19, 18, 18);
 }
-.todoList {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: -700px;
-  z-index: 2;
-}
-.todo {
-  position: absolute;
-  top: 0;
-  display: flex;
 
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 800px;
-  height: 650px;
+.todoList {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -700px;
+    z-index: 2;
 }
+
+.todo {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    height: 650px;
+}
+
 .bgdiv {
-  display: block;
-  background: rgb(167, 210, 238);
-  height: 650px;
-  width: 800px;
-  opacity: 0.75;
-  position: absolute;
-  top: 0;
+    display: block;
+    background: rgb(167, 210, 238);
+    height: 650px;
+    width: 800px;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
 }
 
 #inTodo {
-  width: 300px;
-  height: 50px;
-  font-size: 24px;
-  background-color: rgb(243, 240, 240);
-  outline: none;
+    width: 300px;
+    height: 50px;
+    font-size: 24px;
+    background-color: rgb(243, 240, 240);
+    outline: none;
+    margin: 5px;
 }
-#addTodo {
-  padding: 10px;
-  font-size: 20px;
-  background: rgb(23, 193, 236);
-  cursor: pointer;
-}
-#addTodo:hover {
-  background: rgb(15, 128, 156);
-}
-#backbtn {
-  margin: 10px;
-  width: 100px;
-  font-size: 20px;
-  text-align: left;
-  padding: 5px 10px;
-  background: rgb(14, 138, 240);
-  color: white;
-  clip-path: polygon(68% 0, 100% 49%, 69% 100%, 0 99%, 0 0);
-  cursor: pointer;
-  text-shadow: 2px 2px 2px rgb(53, 51, 51);
-  box-shadow: -2px 2px 3px rgb(53, 51, 51);
-}
-#backbtn:hover {
-  background: rgb(19, 104, 173);
-}
-#backbtn:active {
-  background: rgb(7, 43, 73);
-}
-#todoDate {
-  background-color: rgb(246, 250, 8);
-  text-shadow: 2px 2px 2px rgb(53, 51, 51);
-  box-shadow: 2px 2px 3px rgb(53, 51, 51);
-  color: white;
-  padding: 5px 10px;
-  margin: 10px;
 
-  font-size: 28px;
-  font-weight: 800;
+#inTime {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
 }
+
+#addTodo {
+    padding: 10px;
+    font-size: 20px;
+    background: rgb(23, 193, 236);
+    cursor: pointer;
+}
+
+#addTodo:hover {
+    background: rgb(15, 128, 156);
+}
+
+#backbtn {
+    margin: 10px;
+    width: 100px;
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 10px;
+    background: rgb(14, 138, 240);
+    color: white;
+    clip-path: polygon(68% 0, 100% 49%, 69% 100%, 0 99%, 0 0);
+    cursor: pointer;
+    text-shadow: 2px 2px 2px rgb(53, 51, 51);
+    box-shadow: -2px 2px 3px rgb(53, 51, 51);
+}
+
+#backbtn:hover {
+    background: rgb(19, 104, 173);
+}
+
+#backbtn:active {
+    background: rgb(7, 43, 73);
+}
+
+#todoDate {
+    background-color: rgb(246, 250, 8);
+    text-shadow: 2px 2px 2px rgb(53, 51, 51);
+    box-shadow: 2px 2px 3px rgb(53, 51, 51);
+    color: white;
+    padding: 5px 10px;
+    margin: 10px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
 .TodoBody {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: auto;
-  background: rgb(240, 241, 224);
-  height: 500px;
-  width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    background: rgb(240, 241, 224);
+    height: 500px;
+    width: 500px;
 }
-.TodoBody > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 50px;
-  width: 80%;
-  background: rgb(243, 240, 240);
-  box-shadow: 2px 2px 3px rgb(53, 51, 51);
-  color: rgb(14, 138, 240);
-  padding: 20px;
-  font-size: 20px;
+
+.TodoBody>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 80%;
+    background: rgb(243, 240, 240);
+    box-shadow: 2px 2px 3px rgb(53, 51, 51);
+    color: rgb(14, 138, 240);
+    padding: 20px;
+    font-size: 20px;
 }
-.TodoBody > div > span {
-  overflow: auto;
-  margin: 10px;
+
+.TodoBody>div>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+.TodoBody span {
+    overflow: auto;
+    margin: 10px;
+}
+
 #delBtn {
-  padding: 5px;
-  background: red;
-  cursor: pointer;
-  color: white;
+    padding: 5px;
+    background: red;
+    cursor: pointer;
+    color: white;
 }
+
+#checkBtn {
+    margin: 0 15px;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
 #delBtn:hover {
-  background: rgb(240, 105, 105);
+    background: rgb(240, 105, 105);
 }
+
+.fa-check-circle {
+    color: green;
+    font-size: 26px;
+}
+
+.fa-check-circle:hover {
+    color: rgb(2, 94, 2);
+}
+
+#todPending {
+    height: 200px;
+    width: 300px;
+    overflow-y: auto;
+    background: yellow;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    border: 5px solid rgb(72, 154, 231);
+    padding: 5px;
+}
+
+.todContainer {
+    width: 100%;
+    background: rgb(233, 97, 97);
+    color: white;
+    margin-top: 20px;
+}
+
 @keyframes todoPage {
-  from {
-    top: 0px;
-    opacity: 0;
-  }
-  to {
-    top: -700px;
-    opacity: 100%;
-  }
+    from {
+        top: 0px;
+        opacity: 0;
+    }
+    to {
+        top: -700px;
+        opacity: 100%;
+    }
 }
+
 @keyframes todoPageOff {
-  0% {
-    top: -700px;
-    opacity: 100%;
-  }
-  100% {
-    top: -1400px;
-    opacity: 0;
-  }
+    0% {
+        top: -700px;
+        opacity: 100%;
+    }
+    100% {
+        top: -1400px;
+        opacity: 0;
+    }
 }
+
 @keyframes addInput {
-  from {
-    top: -100px;
-  }
-  to {
-    top: 0;
-  }
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0;
+    }
 }
+
 @keyframes delInput {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

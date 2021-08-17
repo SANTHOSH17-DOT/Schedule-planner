@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule To-do</title>
-    <link rel ="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
-    
+
     <section class="planner">
         <div id="userProf"></div>
         <div class='holder'>
-            <header><h1>Schedule Planner</h1></header>
+            <header>
+                <h1>Schedule Planner</h1>
+            </header>
             <div class="clock"></div>
-            <canvas width='350px' height = '350px' id='canvas1'></canvas>
-            <canvas width='350px' height = '350px' id='canvas2'></canvas>
+            <canvas width='350px' height='350px' id='canvas1'></canvas>
+            <canvas width='350px' height='350px' id='canvas2'></canvas>
             <div id="custH">
                 <i class="fas fa-cogs"></i>
             </div>
             <div id="clockF">
                 <label for='hour'>Hour hand</label>
-                <input type='color' value='#FF0505'id='hour'>
-                
+                <input type='color' value='#FF0505' id='hour'>
+
                 <label for='min'>Minute hand</label>
-                <input type='color' value='#39FB04'id='min'>
-                
+                <input type='color' value='#39FB04' id='min'>
+
                 <label for='sec'>Second hand</label>
-                <input type='color' value='#0703FC'id='sec'>
-                
+                <input type='color' value='#0703FC' id='sec'>
+
                 <label for='clockBG'>clock bg</label>
-                <input type='color' value='#FFFFFF'id='clockBG'>
+                <input type='color' value='#FFFFFF' id='clockBG'>
                 <label for='clockNum'>clock Number</label>
-                <input type='color' value='#000000'id='clockNum'>
+                <input type='color' value='#000000' id='clockNum'>
             </div>
-                
+
             <div class='swap'>
                 <div class='swap-aclock'>
                     <i class="far fa-clock"></i>
@@ -48,42 +51,43 @@
             </div>
             <div>
                 <button id="reset">Reset</button>
-                
+
             </div>
             <div class="resetPage">
                 <div class='boss1'>
                     <div class="hourchange">
                         <div>Hour</div>
-                        
+
                         <div class='arrow arrowH'>
                             <h2 id='hourC'>00</h2>
                             <div>
                                 <button><i class="fas fa-sort-up"></i></button>
-                            <button><i class="fas fa-sort-down"></i></button>
-                        
+                                <button><i class="fas fa-sort-down"></i></button>
+
                             </div>
-                            </div>
+                        </div>
                     </div>
                     <div class="minchange">
                         <div>Min</div>
-                        
+
                         <div class='arrow arrowM'>
                             <h2 id='minC'>00</h2>
                             <div>
                                 <button><i class="fas fa-sort-up"></i></button>
-                            <button><i class="fas fa-sort-down"></i></button>
-                        
-                            </div></div>
+                                <button><i class="fas fa-sort-down"></i></button>
+
+                            </div>
+                        </div>
                     </div>
                     <div class="secchange">
                         <div>Sec</div>
-                        
+
                         <div class='arrow arrowS'>
                             <h2 id='secC'>00</h2>
                             <div>
                                 <button><i class="fas fa-sort-up"></i></button>
-                            <button><i class="fas fa-sort-down"></i></button>
-                        
+                                <button><i class="fas fa-sort-down"></i></button>
+
                             </div>
                         </div>
                     </div>
@@ -94,34 +98,37 @@
                 </div>
             </div>
         </div>
-        
-    <div><button id="previous" onclick='prevMonth()'></button></div>
-    <div class="calendar">
+
+        <div><button id="previous" onclick='prevMonth()'></button></div>
+        <div class="calendar">
             <div class="clockH">
-            <div class='MY'></div>
-            
+                <div class='MY'></div>
+
             </div>
-        
-        <table>
-                
+
+            <table>
+
                 <tr>
-                <thead>
-                    <th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THUR</th><th>FRI</th><th>SAT</th>
-                </thead>
-                <tbody id="calendar-body">
-                </tbody>
+                    <thead>
+                        <th>SUN</th>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THUR</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                    </thead>
+                    <tbody id="calendar-body">
+                    </tbody>
                 </tr>
 
-        </table>
-        
-        <div class="changeM">
-            <div>
-                
-                
-            </div>
-            <div style="margin: 10px;">
-                <!--event listener for dropdown-->
-                <select name="month" id="months" onchange='dropChange()'>
+            </table>
+
+            <div class="changeM">
+
+                <div style="margin: 10px;">
+                    <!--event listener for dropdown-->
+                    <select name="month" id="months" onchange='dropChange()'>
                     <option value=0>Jan</option>
                     <option value=1>Feb</option>
                     <option value=2>Mar</option>
@@ -135,8 +142,8 @@
                     <option value=10>Nov</option>
                     <option value=11>Dec</option>
                     
-                </select>
-                <select name="year" id="years" onchange="dropChange()">
+                    </select>
+                    <select name="year" id="years" onchange="dropChange()">
                     <option value=2010>2010</option>
                     <option value=2011>2011</option>
                     <option value=2012>2012</option>
@@ -160,57 +167,64 @@
                     <option value=2030>2030</option>
                     
                 </select>
+                </div>
             </div>
         </div>
-    </div>
-    <div><button id="next" onclick='nextMonth()'></button></div>
-    <div id ='log-out'><i class="fas fa-sign-out-alt"></i></div>
-    
-</section>
-<section class="todoList">
-    <div class="bgdiv"></div>
-    <div class="todo">
-        <div style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;">
-            <div id="todoDate"></div>
-            
-            <div class="inputTodo" >
-                <input type="text" id="inTodo"><button id="addTodo">➕</button>
+        <div><button id="next" onclick='nextMonth()'></button></div>
+        <div id='log-out'><i class="fas fa-sign-out-alt"></i></div>
+        <div id='todPending'>
+            <h2>Today - Pending </h2>
+        </div>
+
+    </section>
+    <section class="todoList">
+        <div class="bgdiv"></div>
+        <div class="todo">
+            <div style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;">
+                <div id="todoDate"></div>
+
+                <div class="inputTodo">
+
+                    <input type="text" id="inTodo"><br />
+                    <input type='time' id='inTime'><button id="addTodo">➕</button>
+                </div>
+                <div><button id="backbtn">Back</button></div>
             </div>
-            <div><button id="backbtn">Back</button></div>
+            <div class="TodoBody">
+
+            </div>
         </div>
-        <div class="TodoBody">
-            
-        </div>
+    </section>
+    <div class='userPage'>
+        <p>
+            <label for='userID'>Enter your name:</label><br/>
+            <input id='userID' type='text'>
+        </p>
+        <button id='toSchedule'>Let's go</button>
     </div>
-</section>
-<div class='userPage'>
-    <p>
-        <label for='userID'>Enter your name:</label><br/>
-        <input id='userID' type='text'>
-    </p>
-    <button id='toSchedule'>Let's go</button>
-</div>
-<script src="app.js"></script>
-<script src='appAC.js'></script>
-<script src="https://kit.fontawesome.com/f4289c64ac.js" crossorigin="anonymous"></script>
-<script src="three.r119.min.js"></script>
-<script src="vanta.waves.min.js"></script>
-<script>
-VANTA.WAVES({
-  el: ".planner",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0x2f94b6,
-  shininess: 0.00,
-  waveHeight: 17.50,
-  waveSpeed: 1.25,
-  zoom: 0.79
-})
-</script>
+
+    <script src="app.js"></script>
+    <script src='appAC.js'></script>
+    <script src="https://kit.fontawesome.com/f4289c64ac.js" crossorigin="anonymous"></script>
+    <script src="three.r119.min.js"></script>
+    <script src="vanta.waves.min.js"></script>
+    <script>
+        VANTA.WAVES({
+            el: ".planner",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x2f94b6,
+            shininess: 0.00,
+            waveHeight: 17.50,
+            waveSpeed: 1.25,
+            zoom: 0.79
+        })
+    </script>
 </body>
+
 </html>
