@@ -90,7 +90,16 @@ const createCal = (month, year) => {
         value.style.border = 'none';
         });*/
     });
-    //todo list of the current date should be displayed initially
+    document.querySelector('#todPending').style.display = 'none'
+    const todTaskBtn = document.querySelector('#todBtn')
+    todTaskBtn.addEventListener('click', () => {
+            if (document.querySelector('#todPending').style.display == 'none') {
+                document.querySelector('#todPending').style.display = 'block'
+            } else {
+                document.querySelector('#todPending').style.display = 'none'
+            }
+        })
+        //todo list of the current date should be displayed initially
 
     tds = Array.from(document.querySelectorAll('td'));
 
