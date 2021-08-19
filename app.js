@@ -74,7 +74,7 @@ const createCal = (month, year) => {
 
         if (todoContent != undefined) {
             let data = localStorage.getItem(selectDate);
-            console.log(data);
+            //console.log(data);
             let A = JSON.parse(data);
             for (let i = 0; i < A.length; i++) {
                 if (A[i][3] == -1) {
@@ -176,9 +176,9 @@ const createCal = (month, year) => {
                                 if (APM == 'PM') {
                                     curHour = parseInt(curHour) + 12
                                 }
-                                console.log(curHour, A[i][1]);
-                                console.log(curMin, A[i][2]);
-                                console.log((curHour > A[i][1]) || (curHour == A[i][1] && curMin > A[i][2]), 168)
+                                //console.log(curHour, A[i][1]);
+                                //console.log(curMin, A[i][2]);
+                                //console.log((curHour > A[i][1]) || (curHour == A[i][1] && curMin > A[i][2]), 168)
                                 if (A[i][3] != 1) {
                                     if ((curHour > A[i][1]) || (curHour == A[i][1] && curMin > A[i][2])) {
                                         todoData.style.background = 'rgb(252, 98, 98)'
@@ -221,7 +221,7 @@ const createCal = (month, year) => {
                         let inputHour = inputTimeArr[0]
                         let inputMin = inputTimeArr[1]
                         let todoData = document.createElement('div')
-                        console.log(document.querySelector('.clock').textContent)
+                            //console.log(document.querySelector('.clock').textContent)
                         const curTimeArr = document.querySelector('.clock').textContent.split(':')
                         let curHour = curTimeArr[0];
                         let curMin = curTimeArr[1];
@@ -230,9 +230,9 @@ const createCal = (month, year) => {
                         if (APM == 'PM') {
                             curHour = parseInt(curHour) + 12
                         }
-                        console.log(curHour, inputHour);
-                        console.log(curMin, inputMin);
-                        console.log((curHour > inputHour) || (curHour == inputHour && curMin > inputMin), 168)
+                        //console.log(curHour, inputHour);
+                        //console.log(curMin, inputMin);
+                        //console.log((curHour > inputHour) || (curHour == inputHour && curMin > inputMin), 168)
                         if ((curHour > inputHour) || (curHour == inputHour && curMin > inputMin)) {
                             todoData.style.background = 'rgb(252, 98, 98)'
                             over = 1;
@@ -267,7 +267,7 @@ const createCal = (month, year) => {
                                 k.push([document.querySelector('#inTodo').value, inputHour, inputMin, 0]);
                             }
 
-                            console.log(JSON.stringify(k));
+                            //console.log(JSON.stringify(k));
                             localStorage.setItem(selectDate, JSON.stringify(k));
                         }
 
@@ -277,11 +277,11 @@ const createCal = (month, year) => {
                     const checkBtn = Array.from(document.querySelectorAll('#checkBtn'))
                     checkBtn.map(btn => {
                             btn.addEventListener('click', () => {
-                                console.log('check btn clicked');
+                                //console.log('check btn clicked');
                                 let parentDiv = btn.parentElement;
-                                console.log(parentDiv)
+                                //console.log(parentDiv)
                                 checkTodo = parentDiv.parentElement.children[0].textContent;
-                                console.log(checkTodo)
+                                //console.log(checkTodo)
                                 parentDiv.parentElement.parentElement.style.background = 'rgb(104, 235, 68)'
 
 
@@ -298,7 +298,7 @@ const createCal = (month, year) => {
                                 });
                                 let data = localStorage.getItem(selectDate);
                                 let A = JSON.parse(data);
-                                console.log(A);
+                                //console.log(A);
                                 //removing the data from the local storage
 
                                 for (i = 0; i < A.length; i++) {
@@ -318,11 +318,11 @@ const createCal = (month, year) => {
 
                         btn.addEventListener('click', () => {
 
-                            console.log('Del btn clicked');
+                            //console.log('Del btn clicked');
                             let parentDiv = btn.parentElement;
-                            console.log(parentDiv)
+                            //console.log(parentDiv)
                             delTodo = parentDiv.parentElement.children[0].textContent;
-                            console.log(delTodo)
+                            //console.log(delTodo)
                             parentDiv.parentElement.parentElement.style.animation = 'delInput 500ms 1';
 
                             //removing the div element from the todo list
@@ -345,7 +345,7 @@ const createCal = (month, year) => {
                             //removing the data from the local storage
 
                             delIndex = A.indexOf(delTodo);
-                            console.log(delIndex);
+                            //console.log(delIndex);
                             A.splice(delIndex, 1);
                             localStorage.setItem(selectDate, JSON.stringify(A));
 
@@ -361,11 +361,11 @@ const createCal = (month, year) => {
                 const checkBtn = Array.from(document.querySelectorAll('#checkBtn'))
                 checkBtn.map(btn => {
                         btn.addEventListener('click', () => {
-                            console.log('check btn clicked');
+                            //console.log('check btn clicked');
                             let parentDiv = btn.parentElement;
-                            console.log(parentDiv)
+                            //console.log(parentDiv)
                             checkTodo = parentDiv.parentElement.children[0].textContent;
-                            console.log(checkTodo)
+                            //console.log(checkTodo)
                             parentDiv.parentElement.parentElement.style.background = 'rgb(104, 235, 68)'
 
 
@@ -382,7 +382,7 @@ const createCal = (month, year) => {
                             });
                             let data = localStorage.getItem(selectDate);
                             let A = JSON.parse(data);
-                            console.log(A);
+                            //console.log(A);
                             //removing the data from the local storage
 
                             for (i = 0; i < A.length; i++) {
@@ -397,18 +397,18 @@ const createCal = (month, year) => {
                         })
                     })
                     //avoid repeating this part
-                console.log(document.querySelectorAll('#delBtn'));
+                    //console.log(document.querySelectorAll('#delBtn'));
 
                 delBtns = Array.from(document.querySelectorAll('#delBtn'));
                 delBtns.map(btn => {
-                    console.log(btn);
+                    //console.log(btn);
                     btn.addEventListener('click', () => {
 
-                        console.log('Del btn clicked');
+                        //console.log('Del btn clicked');
                         let parentDiv = btn.parentElement;
-                        console.log(parentDiv)
+                        //console.log(parentDiv)
                         delTodo = parentDiv.parentElement.children[0].textContent;
-                        console.log(delTodo)
+                        //console.log(delTodo)
                         parentDiv.parentElement.parentElement.style.animation = 'delInput 500ms 1';
 
                         //removing the div element from the todo list
@@ -431,7 +431,7 @@ const createCal = (month, year) => {
                         //removing the data from the local storage
 
                         delIndex = A.indexOf(delTodo);
-                        console.log(delIndex);
+                        //console.log(delIndex);
                         A.splice(delIndex, 1);
                         localStorage.setItem(selectDate, JSON.stringify(A));
 
@@ -471,7 +471,7 @@ const nextMonth = () => {
         curYear += 1;
     }
     createCal(curMonth, curYear);
-    console.log(curMonth);
+    //console.log(curMonth);
 }
 const prevMonth = () => {
     curMonth -= 1;
@@ -479,13 +479,13 @@ const prevMonth = () => {
         curMonth = 11;
         curYear -= 1;
     }
-    console.log(curMonth)
+    //console.log(curMonth)
     createCal(curMonth, curYear);
 }
 const dropChange = () => {
     let month = document.querySelector('#months').value;
     let year = document.querySelector('#years').value;
-    console.log(typeof(month));
-    console.log(typeof(year));
+    //console.log(typeof(month));
+    //console.log(typeof(year));
     createCal(parseInt(month), parseInt(year));
 }

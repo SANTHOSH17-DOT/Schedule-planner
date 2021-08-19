@@ -125,7 +125,7 @@ const resetDone = document.querySelector('#done');
 
 resetDone.addEventListener('click', function() {
     whichCk = 1;
-    console.log(whichCk)
+    //console.log(whichCk)
     try {
         clearInterval(interval);
     } catch {
@@ -357,7 +357,7 @@ custbtn.addEventListener('click', function() {
     }
 });
 AC.addEventListener('click', function() {
-    console.log(whichCk);
+    //console.log(whichCk);
     if (AC.style.opacity != 1) {
         document.querySelector('.clock').style.display = 'none';
         if (whichCk == 0) {
@@ -398,7 +398,7 @@ const toSchedule = document.querySelector('#toSchedule');
 toSchedule.addEventListener('click', function() {
     userName = document.querySelector('#userID').value;
     if (userName != "") {
-        console.log(userName);
+        //console.log(userName);
         const userProf = document.querySelector('#userProf');
         const greet = document.createElement('p');
         greet.innerHTML = 'Hi ' + '<b>' + userName + '</b>';
@@ -413,7 +413,7 @@ toSchedule.addEventListener('click', function() {
 
         if (todoContent != undefined) {
             let data = localStorage.getItem(selectDate);
-            console.log(data);
+            //console.log(data);
             let A = JSON.parse(data);
             for (let i = 0; i < A.length; i++) {
                 if (A[i][3] == -1) {
@@ -427,7 +427,7 @@ toSchedule.addEventListener('click', function() {
         document.querySelector('.planner').style.opacity = 1;
         document.querySelector('.calendar').style.pointerEvents = 'all';
         document.querySelector('.swap').style.pointerEvents = 'all';
-        console.log(localStorage.getItem(userName + 'manuH'));
+        //console.log(localStorage.getItem(userName + 'manuH'));
         if (localStorage.getItem(userName + 'manuH') != null) {
             whichCk = 1;
             document.querySelector('#clockBG').value = localStorage.getItem(userName + 'clockBG');
@@ -442,31 +442,31 @@ toSchedule.addEventListener('click', function() {
 
             if (diffH < 0 && (new Date()).getHours() < -(diffH)) {
                 diffH = 24 + diffH;
-                console.log(1);
+                //console.log(1);
             }
             if ((new Date()).getHours() + diffH > 23) {
                 diffH = diffH - 24;
-                console.log(1);
+                //console.log(1);
             }
             if (diffM < 0 && (new Date()).getMinutes() < -(diffM)) {
                 diffM = 60 + diffM;
                 diffH -= 1;
-                console.log(1);
+                //console.log(1);
             }
             if ((new Date()).getMinutes() + diffM > 59) {
                 diffM = diffM - 60;
                 diffH += 1;
-                console.log(1);
+                //console.log(1);
             }
             if (diffS < 0 && (new Date()).getSeconds() < -(diffS)) {
                 diffS = 60 + diffS;
                 diffM -= 1;
-                console.log(1);
+                //console.log(1);
             }
             if ((new Date()).getSeconds() + diffS > 59) {
                 diffS = diffS - 60;
                 diffM += 1;
-                console.log(1);
+                //console.log(1);
             }
 
             hour2 = (new Date()).getHours() + diffH;
@@ -477,7 +477,7 @@ toSchedule.addEventListener('click', function() {
         } else {
             intervalA = setInterval(() => { drawClockA(ctxA) }, 1000);
             whichCk = 0;
-            console.log(localStorage.getItem(userName + 'clockBG'));
+            //console.log(localStorage.getItem(userName + 'clockBG'));
             if (localStorage.getItem(userName + 'clockBG') != null) {
                 document.querySelector('#clockBG').value = localStorage.getItem(userName + 'clockBG');
                 document.querySelector('#clockNum').value = localStorage.getItem(userName + 'clockNum');
@@ -505,14 +505,14 @@ toSchedule.addEventListener('click', function() {
 const resetBtn = document.querySelector('#reset');
 
 resetBtn.addEventListener('click', function() {
-    console.log('sflhss');
+    //console.log('sflhss');
     const resetPage = document.querySelector('.resetPage');
 
     if (resetPage.style.display == '') {
         resetPage.style.display = 'flex';
         resetBtn.style.background = 'rgb(14, 153, 14)';
     } else if (resetPage.style.display == 'flex') {
-        console.log('sdfasl');
+        //console.log('sdfasl');
         resetPage.style.display = '';
         resetBtn.style.background = 'rgb(21, 243, 21)';
     }
@@ -534,11 +534,11 @@ autoBtn.addEventListener('click', function() {
 
     clearInterval(intervalB);
     intervalB = setInterval(() => { drawClockA(ctxA) }, 1000);
-    console.log(document.querySelector('.clock').style.display);
+    //console.log(document.querySelector('.clock').style.display);
     if (document.querySelector('.clock').style.display == 'none') {
-        console.log(canvasA.style.display);
+        //console.log(canvasA.style.display);
         if (canvasA.style.display == '') {
-            console.log('dlksj');
+            //console.log('dlksj');
             canvasA.style.display = 'block';
             canvasM.style.display = 'none';
         }
